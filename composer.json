@@ -3,18 +3,32 @@
     "description": "A Laravel Package for Trulioo Customer API",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^7.8"
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/support": "~6|^7|^8|^9|^10|^11"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Geekygeeky\\TruliooCustomerSdk\\": "src/"
-        }
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
     },
     "authors": [
         {
             "name": "GeekyGeeky"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Geekygeeky\\TruliooCustomerSdk\\TruliooCustomerSdkServiceProvider"
+            ],
+            "aliases": {
+                "TruliooCustomerSdk": "Geekygeeky\\TruliooCustomerSdk\\Facades\\TruliooCustomerSdk"
+            }
+        }
+    }
 }
